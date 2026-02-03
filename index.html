@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fa3445, #fca2aa, #ffecd2);
+            color: #333;
+            
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 85px;
+            /* background-color: white; */
+            padding: 10px;
+            background: linear-gradient(45deg, #ff9a9e, #ff7c7c);
+            border-radius: 25px;
+            
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes {
+            background-color: #fa3445;
+            color: white;
+        }
+        #yes:hover {
+            background-color: #fa3445;
+            transform: scale(4);
+        }
+        #no {
+            background-color: #54a8fd;
+            color: white;
+            position: relative;
+        }
+        #no:hover {
+            background-color: #0984e3;
+        }
+        .message {
+            display: none;
+            font-size: 3em;
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            color: #e17055;
+            animation: float 3s infinite linear;
+        }
+        .heart:nth-child(odd) {
+            animation-duration: 8s;
+        }
+        .heart:nth-child(even) {
+            animation-duration: 10s;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        .heart::before {
+            content: '❤️';
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+  <source src="Toota Rishta - Altamash Faridi(MyMp3Song).mp3" type="audio/mpeg">
+  <!-- Your browser does not support the audio element. -->
+</audio>
+    <h1>Will you be my Valentine??????</h1>
+    <div class="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+    <div class="message" id="message">
+        I know you will say yes! <br>
+         ❤️
+    </div>
+
+    <!-- Floating hearts -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 4s;"></div>
+   <div class="heart" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 20%; animation-delay: 1s;"></div> 
+    <div class="heart" style="left: 60%; animation-delay: 5s;"></div>
+   <div class="heart" style="left: 30%; animation-delay: 2s;"></div>
+     <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 70%; animation-delay: 6s;"></div>
+   <div class="heart" style="left: 30%; animation-delay: 2s;"></div>
+     <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+   
+   <div class="heart" style="left: 80%; animation-delay: 7s;"></div>
+   <div class="heart" style="left: 30%; animation-delay: 2s;"></div>
+     <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+   <div class="heart" style="left: 90%; animation-delay: 8s;"></div>
+  <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+    <script>
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+        const message = document.getElementById('message');
+
+        // Move the No button away on hover or click
+        noButton.addEventListener('mouseenter', () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        // Show message on Yes click
+        yesButton.addEventListener('click', () => {
+            message.style.display = 'block';
+            noButton.style.display = 'none';
+            yesButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
